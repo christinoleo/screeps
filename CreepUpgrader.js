@@ -24,7 +24,7 @@
 	getNearbyCreepsWithEnergy(){
 		return this.creep.pos.findInRange(FIND_CREEPS, 1, {
 					filter: (creep) => {
-						return creep.carry.energy > 0 && creep.memory.role != 'builder' && creep.memory.role != 'upgrader';
+						return creep.carry.energy > 0 && creep.memory.role != 'builder';
 					}
 			});
 	}

@@ -57,11 +57,9 @@ module.exports.loop = function () {
 		for(var t in towers){
 			var tower = towers[t];
 			var hostile =  tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-			if(!hostile) hostile =  tower.pos.findClosestByRange(FIND_HOSTILE_STRUCTURES);
-			if(!hostile) hostile =  tower.pos.findClosestByRange(FIND_HOSTILE_SPAWNS);
 			if(hostile){
 				towers[t].attack(hostile);
-			} else {
+			} else if(towers[t].energy > towers[t].energyCapacity/3){
 				var repair = tower.pos.findClosestByRange(FIND_STRUCTURES, {
 										filter: function(object) {
 											return object.hits < object.hitsMax/4

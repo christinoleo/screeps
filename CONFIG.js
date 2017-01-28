@@ -8,11 +8,11 @@
  */
 
 const CreeperTypes = {
-	soldier:4,
 	harvester:0,
 	carrier:1,
 	builder:2,
 	upgrader:3,
+	soldier:4,
 	shooter:5,
 	healer:6
 };

@@ -41,6 +41,7 @@ class MySpawn{
 			// var error = spawn.createCreep(skills, type + Math.floor((Math.random()*1000)), {role: type, type: type});
  		// } else
  		 if(this.checkIfPopulate()){
+
 			this.extensions = this.room.find(FIND_MY_STRUCTURES, {filter : {structureType: STRUCTURE_EXTENSION}});
 
 			for(var type in CONFIG.CreeperTypes){
@@ -58,7 +59,7 @@ class MySpawn{
 		else if(true){
 			this.extensions = this.room.find(FIND_MY_STRUCTURES, {filter : {structureType: STRUCTURE_EXTENSION}});
 			for(var type in CONFIG.CreeperTypes){
-				// console.log(type, this.checkIfCreateCreep(type));
+				// console.log(this.checkIfCreateCreep(type));
 				if(this.checkIfCreateCreep(type)){
 					var skills = this.generateSkill(CONFIG.CreeperTypes[type]);
 					console.log('Next to create:' + type + ' with ' + skills);

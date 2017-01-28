@@ -46,6 +46,11 @@
 			});
 	}
 
+	getNearestHarvester(){
+		return this.creep.pos.findClosestByRange(FIND_MY_CREEPS, {filter : (source) => {
+										return source.memory.role == 'harvester'}});
+	}
+
 	getNearestContainerWithEnergy(){
 		return this.creep.pos.findClosestByRange(FIND_STRUCTURES, {
 					filter: (container) => {
@@ -92,7 +97,7 @@
 	 			this.action = MyCreep.ACTION.PICKUP;
 	 		} else if(this.action != MyCreep.ACTION.MOVE){
 	 			this.action = MyCreep.ACTION.MOVE;
-	 			this.destiny = this.getNearestHarvest().id;
+	 			this.destiny = this.getNearestHarvester().id;
 	 		}
  		}
 

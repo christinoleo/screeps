@@ -114,9 +114,6 @@ class MyCreep{
 	}
 
 	deliver(gameObject){
-		//build road
-		this.room.createConstructionSite(this.creep.pos, STRUCTURE_ROAD);
-
 		if(gameObject instanceof Source){
 			if(this.creep.harvest(gameObject, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
 				this.creep.moveTo(gameObject);
@@ -254,6 +251,7 @@ class MyCreep{
 	}
 
 	doAction(){
+		this.room.createConstructionSite(this.creep.pos, STRUCTURE_ROAD);
 		switch(this.action){
 			case MyCreep.ACTION.MOVE:
 				return this.creep.moveTo(Game.getObjectById(this.destiny));
